@@ -446,14 +446,14 @@ Napi::Value service::OBS_service_uninstallVirtualCamPlugin(const Napi::CallbackI
 	ShExecInfo.nShow = SW_HIDE;
 	ShExecInfo.hInstApp = NULL;
 
-	std::wstring pathToRegFile64 = L"/u \"" + utfWorkingDir;
+	std::wstring pathToRegFile64 = L"/s /u \"" + utfWorkingDir;
 	pathToRegFile64 += L"\\data\\obs-plugins\\win-dshow\\obs-virtualcam-module64.dll\"";
 	ShExecInfo.lpParameters = pathToRegFile64.c_str();
 	ShellExecuteEx(&ShExecInfo);
 	WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
 	CloseHandle(ShExecInfo.hProcess);
 
-	std::wstring pathToRegFile32 = L"/u \"" + utfWorkingDir;
+	std::wstring pathToRegFile32 = L"/s /u \"" + utfWorkingDir;
 	pathToRegFile32 += L"\\data\\obs-plugins\\win-dshow\\obs-virtualcam-module32.dll\"";
 	ShExecInfo.lpParameters = pathToRegFile32.c_str();
 	ShellExecuteEx(&ShExecInfo);
