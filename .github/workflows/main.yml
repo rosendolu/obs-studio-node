@@ -4,13 +4,13 @@ on:
   push:
     paths-ignore:
       - '**.md'
-    branches: ['staging']
+    branches: ['staging', 'rosendo']
     tags:
       - '*'
   pull_request:
     paths-ignore:
       - '**.md'
-    branches: ['staging']
+    branches: ['staging', 'rosendo']
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
